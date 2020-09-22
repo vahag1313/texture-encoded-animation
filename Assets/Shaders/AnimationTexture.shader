@@ -53,7 +53,7 @@
                 v2f o;
                 
                 float frame = _AnimTex_TexelSize.x * int(_Time.y * _FrameRate % _AnimFrameCount);
-                float vertex =  _AnimTex_TexelSize.y * v.vid * _VertexCount;
+                float vertex =  _AnimTex_TexelSize.y * (v.vid + 0.5);
                 float3 pos = tex2Dlod(_AnimTex, float4(frame, vertex,0,0)).xyz;
                 pos = (pos * 2.0 - 1.0) * _AnimBounds; 
                 o.vertex = UnityObjectToClipPos(pos);

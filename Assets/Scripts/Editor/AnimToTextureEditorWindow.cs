@@ -66,6 +66,7 @@ public class AnimToTextureEditorWindow : EditorWindow
         for (float t = 0.0f; t <= referenceAnimationClip.length; t += 1f / frameRate)
         {
             AnimationMode.SampleAnimationClip(animatedObject, referenceAnimationClip, t);
+            bakedMesh = new Mesh();
             skinnedRenderer.BakeMesh(bakedMesh);
             frameMeshes.Add(bakedMesh);
         }
